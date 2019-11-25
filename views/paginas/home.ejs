@@ -1,3 +1,38 @@
+
 <%- contentFor('body') %>
-<div class="jumbotron text-center"> Página Inicial
+ <div class="jumbotron text-center">
+
+
+<!-- DEFINIÇÃO DO CORPO DA PAGINA -->
+<div class="container">
+
+    <div class="card-deck">
+
+
+        <% for (var i=0; i<listaDeProd.length; i++){ %>
+
+
+        <div class="card">
+            <a href="/filme/<%=listaDeProd[i].id%>">
+                <!--  GET params.XXX   -->
+                <!--<a href="/filme?id=<%=listaDeProd[i].id%>&nome=<%=listaDeProd[i].titulo%>">  <!-- GET query.id e query.nome-->
+                <img src="./img/<%=listaDeProd[i].imagem%>" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title"><%= listaDeProd[i].nome %></h5>
+                <p class="card-text"><%= listaDeProd[i].descricao %></p>
+            </div>
+        </div>
+
+
+
+        <%} %>
+    </div>
 </div>
+
+
+
+
+
+</div>
+

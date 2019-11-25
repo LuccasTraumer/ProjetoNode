@@ -1,0 +1,29 @@
+<%- contentFor('body')%>
+<div class="container">
+    <h4> Detalhes do Produto</h4>
+
+    <table>
+        <tr>
+            <th>
+                <img src="../img/<%=listaDeProd[0].imagem%>" alt="..">
+            </th>
+            <th>
+                <table>
+                    <tr>
+                        <td><a href="compra/2/3"> 19h00</a></td>
+                        <td><a href="compra/2/2"> 21h00</a></td>
+                        <td><a href="compra/2/4"> 23h00</a></td>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+        <Tr>
+            <th> Nome</th>
+            <td> <%= listaDeProd[0].nome%></td>
+        </Tr>
+        <Tr>
+            <th>Resumo</th>
+            <td><%= listaDeProd[0].descricao%></td>
+        </Tr>
+    </table>
+</div>
