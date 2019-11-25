@@ -2,19 +2,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Utilizando o EJS</title>
+    <title>Traumer Tech</title>
     <link rel="stylesheet"
           type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-inverse">
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-            <li><a href="/contato">Fale Conosco</a></li>
+    <div role="navigation" class="border shadow-lg p-3 mb-5 bg- rounded">
+        <img class="logo" src="img/logoTOPO.png" alt="TechTraumer">
+        <ul class="nav justify-content-end">
+            <li clas="nav-item">
+                <a class ="nav-link text-black-50"href="/">Home</a>
+            </li>
+            <li clas="nav-item">
+                <a class="nav-link" href="/sobre">Sobre</a>
+            </li>
+            <li class="navbar-dark">
+                <a class="nav-link" href="/contato">Fale Conosco</a>
+            </li>
         </ul>
+    </div>
     </nav>
 </header>
 <main>
@@ -22,8 +30,10 @@
         <%- body %>
     </div>
 </main>
-<footer>
-    <HR>EJS & NodeJS
+<footer class="text-white bg- text-center border shadow-sm p-3 mb-5 rounded">
+    <div class="">
+        <a class="" href="">Tech for People</a>, Copyright &copy; 2019
+    </div>
 </footer>
 </body>
 </html>
