@@ -1,10 +1,22 @@
 <%- contentFor('body') %>
 <div class="jumbotron text-center">
-    <h1>Conheça a nossa equipe!</h1>
-    <div class="row">
+        <h2> Quem Somos? </h2>
+    <h5>
+        A Traumer surgiu como uma Empresa de Venda de Produtos Eletronico desde Perifericos a Produtos de Grande Porte
+        Criada e Idealizada por nosso Fundador Luccas Traumer, hoje é o maior Ecommerc na área ultrapassando gigante
+        como Kabum, Kalunga entre outras.
+        Hoje temos Loja em TODOS os estados Brasileiros e com diversas Lojas Presenciais. Mas com o crescimento da Empresa
+        a Traumer Inc, não só se limitou ao Mercado Eletronico e pretende entrar e GANHAR mercado no ramo da Moda
+        Focando na Street wear e moda mais foca no Estilo da Juventude e principalmente dando a Vóz a Periferias Brasilieras.
+
+    </h5>
+    </div>
+<div class="jumbotron text-center">
+    <h3>Conheça a nossa equipe!</h3>
+    <div class="row" >
         <% for (usuario of usuarios){%>
             <div class="col-sm-4">
-                <h2><%= usuario.nome %></h2>
+                <h2 ><%= usuario.nome %></h2>
                 <P><%= usuario.email %></P>
                 <img class="img-responsive"
                      style="height: 250px"

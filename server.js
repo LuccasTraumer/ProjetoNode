@@ -37,15 +37,7 @@ app.get('/sobre',function (req,resp) {
     var user = [{
         nome: "Lucas Traumer",
         email: "traumer@unicamp.br",
-        avatar: 'http://placebear.com/300/300'
-    },{
-        nome: faker.name.findName(),
-        email: faker.internet.email(),
-        avatar: 'http://placebear.com/400/300'
-    },{
-        nome: faker.name.findName(),
-        email: faker.internet.email(),
-        avatar: 'http://placebear.com/500/300'
+        avatar: 'img/eu.jpeg'
     }]
     resp.render('paginas/sobre',{
         usuarios:user
@@ -67,6 +59,10 @@ app.post('/contato',function (req,resp) {
     resp.render("paginas/respContato",{contato:User})
 });
 
+app.get('/produtos',function (req,resp) {
+    var requisicao = conexao.Request();
+    resp.render('paginas/produtos');
+});
 app.get('/produto/compra/:id/:idH',function (req,resp) {
     var idProd = req.params.id;
     var idHorario = req.params.idH;
