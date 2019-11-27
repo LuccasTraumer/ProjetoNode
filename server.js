@@ -20,7 +20,7 @@ const conexao = require('./config/custom-mssql');
 app.get('/',function (req,resp) {
     var requisicao = new conexao.Request();
 
-    requisicao.query("select top 4 * from PRODUTOSNODE",
+    requisicao.query("select top 4 * from dbo.PRODUTOS",
         function (codErro,RecordSet) {
         if(codErro)
             console.log("Erro no Banco de Dados: "+codErro);
