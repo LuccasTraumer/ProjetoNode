@@ -8,7 +8,7 @@ PRECO money not null,
 AVALIACAO float 
 )
 
-drop table dbo.PRODUTOS
+
 create table dbo.CLIENTES(
 CODIGOCLIENTE int primary key,
 NOMECLIENTE varchar(100) not null,
@@ -20,6 +20,9 @@ SALDO money ,
 AVALIACAO float
 )
 
+
+select * from dbo.PRODUTOS
+select * from dbo.CLIENTES
 create table dbo.VENDASPRODUTOS(
 CODIGOVENDA int primary key,
 CODIGOPRODUTO int not null,

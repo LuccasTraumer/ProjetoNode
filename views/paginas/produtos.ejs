@@ -1,0 +1,28 @@
+
+<%- contentFor('body') %>
+
+<!-- <div class="jumbotron text-center"> -->
+<!-- DEFINIÇÃO DO CORPO DA PAGINA -->
+<div class="container">
+    <div class="card-deck">
+
+
+        <% for (var i=0; i<listaDeProd.length; i++){ %>
+
+
+        <div class="card">
+            <% if(i == 4)%>
+            <a href="/filme/<%=listaDeProd[i].CODIGOPRODUTO%>">  <!--  GET params.XXX   -->
+                <!--                          <a href="/produto?CODIGOPRODUTO=<%=listaDeProd[i].CODIGOPRODUTO%>&nome=<%=listaDeProd[i].NOMEPRODUTO%>">  <!-- GET query.id e query.nome-->
+                <img src="/img/alt/foto0<%=listaDeProd[i].CODIGOPRODUTO%>.png" class="card-img-top" alt="...">           </a>
+            <div class="card-body">
+                <h5 class="card-title"><%= listaDeProd[i].NOMEPRODUTO%>:<%=listaDeProd[i].MODELOPRODUTO%></h5>
+                <p class="card-text text-md-center text-truncate"><%= listaDeProd[i].DESCRICAOPRODUTO %></p>
+            </div>
+        </div>
+
+
+
+        <%} %>
+    </div>
+</div>

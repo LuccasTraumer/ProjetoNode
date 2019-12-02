@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Traumer Tech</title>
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.js"></script>
+    <script src="/public/js/popper.min.js"></script>
     <link rel="stylesheet"
-          type="text/css" href="css/bootstrap.min.css">
+          type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
 <header>
     <div role="navigation" class="border shadow-lg p-3 mb-5 bg- rounded">
-        <img class="logo" src="img/alt/logoTOPO.png" alt="TechTraumer">
+        <img class="logo" src="img/alt/logoTOPO.png" height="100" width="100" alt="TechTraumer">
         <ul class="nav justify-content-end">
             <li clas="nav-item">
                 <a class ="nav-link text-black-50"href="/">Home</a>
@@ -19,7 +22,18 @@
                 <a class="nav-link" href="/sobre">Sobre</a>
             </li>
             <li class="navbar-dark">
-                <a class="nav-link" href="/produto">Produtos</a>
+                <a class="nav-link" href="/produtos">Produtos</a>
+            </li>
+            <li class="navbar-dark">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Entrar
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropDownMenu">
+                        <a class="dropdown-item" href="paginas/cadastro.ejs"> Cadastrar</a>
+                        <a class="dropdown-item" href="paginas/cadastro.ejs"> Login</a>
+                    </div>
+                </div>
             </li>
             <li class="navbar-dark">
                 <a class="nav-link" href="/contato">Fale Conosco</a>

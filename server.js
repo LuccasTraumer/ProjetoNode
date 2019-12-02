@@ -31,8 +31,31 @@ app.get('/',function (req,resp) {
 
 });
 
+app.get('/cadastro',function (req,resp) {
+    resp.render('paginas/cadastro');
+});
+app.post('/cadastro',function (req,resp) {
+    var requisicao = new conexao.Request();
+   var user = [{
+       "nome": req.body.txtNome,
+       "sobreNome": req.body.txtSobreNome,
+       "telefone": req.body.txtTelefone,
+       "email": req.body.txtEmail,
+       "endereco": req.body.txtEndereco,
+       "saldo": req.body.txtSaldo,
+       "avaliacao": req.body.txtAvaliacao
+   }];
+   var sql = "insert into dbo.CLIENTES values("+1+","+String(req.body.txtNome) +","+String(req.body.txtSobreNome)+","+String(req.body.txtTelefone)+","+
+       String(req.body.txtEmail) + ","+ String(req.body.txtEndereco) + ","+Number(req.body.txtSaldo) + ","+req.body.txtAvaliacao+")";
 
-
+   requisicao.query(sql,function(codErro,RecordSet){
+            if(codErro)
+                console.log("Erro: "+codErro)
+       else
+           resp.render("paginas/respCadastro");
+   });
+   //resp.render('paginas/respCadastro',{usuario:user});
+});
 app.get('/sobre',function (req,resp) {
     var user = [{
         nome: "Lucas Traumer",
@@ -60,8 +83,16 @@ app.post('/contato',function (req,resp) {
 });
 
 app.get('/produtos',function (req,resp) {
-    var requisicao = conexao.Request();
-    resp.render('paginas/produtos');
+    var requisicao = new conexao.Request();
+
+    requisicao.query("select * from dbo.PRODUTOS",
+        function (codErro,RecordSet) {
+            if(codErro)
+                console.log("Erro no Banco de Dados: "+codErro);
+            resp.render("paginas/produtos",{listaDeProd: RecordSet["recordset"]}
+            );
+        });
+    //resp.render('paginas/produtos');
 });
 app.get('/produto/compra/:id/:idH',function (req,resp) {
     var idProd = req.params.id;
@@ -72,7 +103,30 @@ app.get('/produto/compra/:id/:idH',function (req,resp) {
 
     var carrinho = "["+global.Carrinho+"]";
     resp.render('paginas/lista',{Carrinho:carrinho});
-})
+});
+
+app.get('/produto/:id?', function (request, response) {
+
+    console.log("Request:" + request.params.id);
+    var requisicao = new conexao.Request();
+
+
+    var strSql = "select * from dbo.PRODUTOS where CODIGOPRODUTO=" + request.params.id;
+
+    requisicao.query(strSql,
+        function (codErro, RecordSet){
+            if (codErro)
+                console.log("Erro no Banco de Dados: " + codErro);
+            else
+                response.render("paginas/produto",
+                    {listaDeProd: RecordSet["recordset"] }
+                );
+
+        });
+
+     response.render("paginas/produtos")
+
+});
 
 
 app.listen(port, function (req,resp) {
