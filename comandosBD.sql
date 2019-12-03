@@ -48,7 +48,7 @@ constraint fkCodCliente foreign key(CODIGOCLIENTE) references dbo.CLIENTES(CODIG
 
 select * from dbo.PRODUTOS
 
-delete from dbo.PRODUTOS where CODIGOPRODUTO = 11
+update dbo.PRODUTOS set PRECO = 2500.00 where CODIGOPRODUTO = 12
 
 insert into dbo.PRODUTOS values(1,'GALAXY','S8','SAMSUNG','Poderos e Estiloso com seu Display Infinito e Resistente a Agua, o GALAXY S8 vem forte no Mercado',2000.0,4.8)
 insert into dbo.PRODUTOS values(2,'Galaxy','Watch','Samsung','Estiloso e Pratico, o Galaxy watch além de ser muito util em atividades fisicas pode fazer conexao com outro Aparelhos da Samsung',2000.00,null)
