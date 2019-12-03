@@ -6,38 +6,23 @@
 <div class="container">
     <div class="card-deck">
 
-        <div class="card-group">
-            <div class="card">
-                <% for (var i=0; i<2; i++){ %>
-                <img class="card-img-top w-50px h-50px" src="/img/alt/foto0<%=listaDeProd[i].CODIGOPRODUTO%>.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title"><%= listaDeProd[i].NOMEPRODUTO%>:<%=listaDeProd[i].MODELOPRODUTO%></h5>
-                    <p class="card-text"><%=listaDeProd[i].DESCRICAOPRODUTO%>.</p>
-                    <h5> R$ <%= listaDeProd[i].PRECO%></h5>
-                </div>
+
+        <% for (var i=0; i<listaDeProd.length; i++){ %>
+
+
+        <div class="card">
+            <a href="/produtos/<%=listaDeProd[i].CODIGOPRODUTO%>">  <!--  GET params.XXX   -->
+                <!--                          <a href="/filme?id=<%=listaDeProd[i].CODIGOPRODUTO%>&nome=<%=listaDeProd[i].NOMEPRODUTO%>">  <!-- GET query.id e query.nome-->
+                <img src="/img/alt/foto0<%=listaDeProd[i].CODIGOPRODUTO%>.png" class="card-img-top" alt="...">           </a>
+            <div class="card-body">
+                <h5 class="card-title"><%= listaDeProd[i].NOMEPRODUTO%>:<%=listaDeProd[i].MODELOPRODUTO%></h5>
+                <h5> R$ <%= listaDeProd[i].PRECO%></h5>
+                <p class="card-text"><%= listaDeProd[i].DESCRICAOPRODUTO %></p>
+
                 <button type="button" class="btn btn-primary btn-lg">Comprar</button>
-                <%} %>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
             </div>
-            <div class="card">
-                <div class="card">
-                    <% for (var i=2; i<4; i++){ %>
-                    <img class="card-img-top" src="/img/alt/foto0<%=listaDeProd[i].CODIGOPRODUTO%>.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= listaDeProd[i].NOMEPRODUTO%>:<%=listaDeProd[i].MODELOPRODUTO%></h5>
-                        <p class="card-text"><%=listaDeProd[i].DESCRICAOPRODUTO%>.</p>
-                        <h5> R$ <%= listaDeProd[i].PRECO%></h5>
-                    </div>
-                    <button type="button" class="btn btn-primary btn-lg">Comprar</button>
-                    <%} %>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+        </div>
 
-
+        <%} %>
     </div>
 </div>
-

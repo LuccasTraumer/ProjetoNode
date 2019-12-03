@@ -33,9 +33,6 @@ app.get('/',function (req,resp) {
 app.get('/carrinho',function (req,resp) {
 
 });
-app.get('/seil',function (req,resp) {
-    resp.render('/paginas/seiLa');
-})
 
 app.get('/cadastro',function (req,resp) {
     resp.render('paginas/cadastro');
@@ -113,26 +110,26 @@ app.get('/produtos/compra/:id/:idH',function (req,resp) {
 
 app.get('/produtos/:id?', function (request, response) {
 
-    console.log("Request:" + request.params.CODIGOPRODUTO);
+    console.log("Request:" + request.params.id);
     var requisicao = new conexao.Request();
+    var strSql = "select * from dbo.PRODUTOS ";
+    strSql +=" where CODIGOPRODUTO = " + request.params.CODIGOPRODUTO;
 
-
-    var strSql = "select * from dbo.PRODUTOS where CODIGOPRODUTO = " + request.params.id;
 
     requisicao.query(strSql,
         function (codErro, RecordSet){
             if (codErro)
                 console.log("Erro no Banco de Dados: " + codErro);
             else
-                response.render("paginas/produto",
-                    {listaDeProd: RecordSet["recordset"] }
+                response.render("paginas/produtos",
+                    { listaDeFilme: RecordSet["recordset"] }
                 );
 
-        });
+        })
 
-     //response.render("paginas/produtos")
+    // response.render("paginas/filme")
 
-});
+})
 
 
 app.listen(port, function (req,resp) {
