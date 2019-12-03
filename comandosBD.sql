@@ -48,6 +48,7 @@ constraint fkCodCliente foreign key(CODIGOCLIENTE) references dbo.CLIENTES(CODIG
 
 select * from dbo.PRODUTOS
 
+delete from dbo.PRODUTOS where CODIGOPRODUTO = 11
 
 insert into dbo.PRODUTOS values(1,'GALAXY','S8','SAMSUNG','Poderos e Estiloso com seu Display Infinito e Resistente a Agua, o GALAXY S8 vem forte no Mercado',2000.0,4.8)
 insert into dbo.PRODUTOS values(2,'Galaxy','Watch','Samsung','Estiloso e Pratico, o Galaxy watch além de ser muito util em atividades fisicas pode fazer conexao com outro Aparelhos da Samsung',2000.00,null)
@@ -57,3 +58,7 @@ insert into dbo.PRODUTOS values(5,'Monitor Curvo','Curved Monitor LED 32','Samsu
 insert into dbo.PRODUTOS values(6,'Plastation','Plastation 4','PLAYSTATION','Os maiores nomes do mundo dos jogos ganham vida no PS4, desde os famosos personagens de Star Wars™ Battlefront™ ll, até o tão aguardado Call of Duty: WWll',1800.0,4.5)
 insert into dbo.PRODUTOS values(7,'Raspberry','RASPEBERRY 4','RASPBERRY PI','Um mini Computador do tamanho de uma Cartão de Credito, com um Processamento excelente pelo tamanho',300.0,5.0)
 insert into dbo.PRODUTOS values(8,'XBOX','ONE','Microsoft','Um dos Consoles mais Populares do Mundo, com Diversos Jogos e Modelos a sua Espera',1500.0,4.8)
+insert into dbo.PRODUTOS values(9,'Medusa','Helmet','OAKLEY','O Oakley Medusa Helmet é um gorro de couro diabólico com dreadlocks de couro, cinta de queixo ajustável, costura detalhada e rebites para prender os óculos de proteção.',2.600,null)
+insert into dbo.PRODUTOS values(10,'Mars','JORDAN','OAKLEY','O Mars foi o único modelo da Oakley a vir coberto de couro e ser lançado por um jogador de basquete que foi nada mais e nada menos que a lenda Michael Jordan.',2.500,null)
+insert into dbo.PRODUTOS values(11,'X-metal','Romeo 2.0','OAKLEY','Um óculos já com uma historia de sucesso depois de seu antepassado Romeo, o Romeo 2.0 é um dos óculos mais bonitos e bem desenhados da Oakley.',2.500,null)
+insert into dbo.PRODUTOS values(12,'Flak','Camuflada','OAKLEY','Com o Conforto e estilo dos Tenis da Marca, Oakley lança sua edição limitada de um dos seus modelos mais famosos a Flak.',650,null)

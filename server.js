@@ -100,7 +100,7 @@ app.get('/produtos',function (req,resp) {
         });
     //resp.render('paginas/produtos');
 });
-app.get('/produto/compra/:id/:idH',function (req,resp) {
+app.get('/produtos/compra/:id/:idH',function (req,resp) {
     var idProd = req.params.id;
     var idHorario = req.params.idH;
 
@@ -111,13 +111,13 @@ app.get('/produto/compra/:id/:idH',function (req,resp) {
     resp.render('paginas/lista',{Carrinho:carrinho});
 });
 
-app.get('/produto/:id?', function (request, response) {
+app.get('/produtos/:id?', function (request, response) {
 
-    console.log("Request:" + request.params.id);
+    console.log("Request:" + request.params.CODIGOPRODUTO);
     var requisicao = new conexao.Request();
 
 
-    var strSql = "select * from dbo.PRODUTOS where CODIGOPRODUTO=" + request.params.id;
+    var strSql = "select * from dbo.PRODUTOS where CODIGOPRODUTO = " + request.params.id;
 
     requisicao.query(strSql,
         function (codErro, RecordSet){
@@ -130,7 +130,7 @@ app.get('/produto/:id?', function (request, response) {
 
         });
 
-     response.render("paginas/produtos")
+     //response.render("paginas/produtos")
 
 });
 
