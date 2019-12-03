@@ -30,6 +30,12 @@ app.get('/',function (req,resp) {
 
 
 });
+app.get('/carrinho',function (req,resp) {
+
+});
+app.get('/seil',function (req,resp) {
+    resp.render('/paginas/seiLa');
+})
 
 app.get('/cadastro',function (req,resp) {
     resp.render('paginas/cadastro');

@@ -11,17 +11,15 @@
 
 
         <div class="card">
-            <% if(i == 4)%>
             <a href="/filme/<%=listaDeProd[i].CODIGOPRODUTO%>">  <!--  GET params.XXX   -->
                 <!--                          <a href="/produto?CODIGOPRODUTO=<%=listaDeProd[i].CODIGOPRODUTO%>&nome=<%=listaDeProd[i].NOMEPRODUTO%>">  <!-- GET query.id e query.nome-->
                 <img src="/img/alt/foto0<%=listaDeProd[i].CODIGOPRODUTO%>.png" class="card-img-top" alt="...">           </a>
-            <div class="card-body">
+            <div class="card-body ">
                 <h5 class="card-title"><%= listaDeProd[i].NOMEPRODUTO%>:<%=listaDeProd[i].MODELOPRODUTO%></h5>
                 <p class="card-text text-md-center text-truncate"><%= listaDeProd[i].DESCRICAOPRODUTO %></p>
+                <button type="button" class="btn btn-primary btn-lg">Comprar</button>
             </div>
         </div>
-
-
 
         <%} %>
     </div>

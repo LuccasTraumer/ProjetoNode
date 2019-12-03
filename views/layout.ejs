@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Traumer Tech</title>
+    <link rel="shortcut icon" href="img/alt/favicon.png" type="image/x-png"/>
     <script src="/public/js/jquery.min.js"></script>
     <script src="/public/js/bootstrap.js"></script>
     <script src="/public/js/popper.min.js"></script>
@@ -12,60 +13,177 @@
 </head>
 <body>
 <header>
-    <div role="navigation" class="border shadow-lg p-3 mb-5 bg- rounded">
-        <img class="logo" src="img/alt/logoTOPO.png" height="100" width="100" alt="TechTraumer">
-        <ul class="nav justify-content-end">
-            <li clas="nav-item">
-                <a class ="nav-link text-black-50"href="/">Home</a>
-            </li>
-            <li clas="nav-item">
-                <a class="nav-link" href="/sobre">Sobre</a>
-            </li>
-            <li class="navbar-dark">
-                <a class="nav-link" href="/produtos">Produtos</a>
-            </li>
-            <li class="navbar-dark">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="/img/alt/LogoTOPO.png" height="60" width="60">
+        <a class="navbar-brand" href="">Traumer Tech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sobre">Sobre</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link divider" href="/produtos">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link divider" href="/carrinho">Carrinho</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Entrar
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropDownMenu">
-                        <a class="dropdown-item" href="paginas/cadastro.ejs"> Cadastrar</a>
-                        <a class="dropdown-item" href="paginas/cadastro.ejs"> Login</a>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/cadastro">Cadastrar</a>
+                        <a class="dropdown-item" href="/login">Login</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Algo mais aqui</a>
                     </div>
-                </div>
-            </li>
-            <li class="navbar-dark">
-                <a class="nav-link" href="/contato">Fale Conosco</a>
-            </li>
-        </ul>
-    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2 border-dark" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn btn-outline-success my-2 my-sm-0 bg-dark text-white border-dark" type="submit">Pesquisar</button>
+            </form>
+        </div>
     </nav>
+
 </header>
 <main>
     <div class="container">
         <%- body %>
     </div>
 </main>
-<footer class="text-white bg- text-center border shadow-sm p-3 mb-5 rounded">
-    <div class="">
-        <a class="" href="">Tech for People</a>
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark pt-4 bg-dark">
 
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
 
-        <h5 id="end" class="text-lg-right text-black-50 icon-tag">Endereço </h5>
-       <h6 class="text-lg-right text-black-50">
-       Rua Francisco Mesquita,07<br>
-       13092-511<br>
-       4002-8922<br>
-       </h6>
-        <div class="">
-            <h5 class="text-lg-left text-black-50"> Redes Sociais </h5>
-            <img src="img/socialMedias/tes/facebook.png" class="float-left"></br>
-            <img src="img/socialMedias/tes/twitter.png" class="float-left"></br>
-            <img src="img/socialMedias/tes/instagram.png" class="float-left"></br>
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-4 mx-auto">
+
+                <!-- Content -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Traumer Tech</h5>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto bg-info" style="width: 150px;">
+                <p class="text-white">Hoje somos a Maior Compania de Venda do Brasil, tendo comecado com o Segmento de Eletronicos.
+                E hoje vendemos de todo tipo de Produto para nossos consumidores</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Redes Sociais</h5>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto bg-danger" style="width: 140px;">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!"><img src="/img/socialMedias/tes/facebook.png"> Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#!"> <img src="/img/socialMedias/tes/twitter.png"> Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/luccastraumer/"><img src="/img/socialMedias/tes/instagram.png"> Instagram</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/luccastraumer/"><img src="/img/socialMedias/tes/linkedin.png"> Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/LuccasTraumer"><img src="/img/socialMedias/tes/github.png"> GitHub</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Links Uteis</h5>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto bg-info" style="width: 120px;">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://nodejs.org/">Node JS</a>
+                    </li>
+                    <li>
+                        <a href="https://getbootstrap.com/">Bootstrap</a>
+                    </li>
+                    <li>
+                        <a href="https://ejs.co/">EJS</a>
+                    </li>
+                    <li>
+                        <a href="/">Traumer Tech</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto">
+
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Contato</h5>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto bg-danger" style="width: 100px;">
+                <ul class="list-unstyled text-white">
+                    <p>
+                        <img src="/img/socialMedias/tes/home.png" width="18" height="18"> Rua Jorge de Figueiredo Corrêa, 735</p>
+                    <p>
+                        <img src="/img/socialMedias/tes/faleConosco.png" width="18" height="18"> info@example.com</p>
+                    <p>
+                        <img src="/img/socialMedias/tes/call.png" width="18" height="18">+55(19)4002-9822</p>
+                    <p>
+                        <img src="/img/socialMedias/tes/call.png" width="18" height="18">+55(19)3521-9903</p>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
         </div>
+        <!-- Grid row -->
 
     </div>
+
+
+    <hr>
+
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+        <li class="list-inline-item">
+            <h5 class="mb-1 text-white">Register for free</h5>
+        </li>
+        <li class="list-inline-item">
+            <a href="/cadastro" class="btn btn-danger btn-rounded">Sign up!</a>
+        </li>
+    </ul>
+    <hr>
+
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> Traumer Tech</a>
+    </div>
+    <!-- Copyright -->
+
 </footer>
+<!-- Footer -->
 </body>
 </html>
